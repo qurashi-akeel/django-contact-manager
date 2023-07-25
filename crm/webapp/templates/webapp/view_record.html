@@ -1,0 +1,45 @@
+{% extends "webapp/base.html" %}
+{% block main %}
+  <div class="container shadow-md bg-dark p-5 mt-3 form-container">
+    <h3 class="text-info d-flex justify-content-between">
+      <a href="{% url 'dashboard' %}" class="text-white text-decoration-none">←</a><span>{{ record.first_name|title }} {{ record.last_name|title }}</span>
+    </h3>
+    <hr class="my-4">
+    <div class="my-4 d-flex justify-content-between mx-2">
+      <a href="{% url 'update_record' record.id %}" class="btn btn-secondary">Update record</a>
+      <a href="{% url 'delete_record' record.id %}" class="btn btn-danger">Delete record</a>
+    </div>
+    <div class="card p-4">
+      <p class="d-flex justify-content-between">
+        <strong>ID</strong> {{ record.id }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>First Name</strong> {{ record.first_name }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Last Name</strong> {{ record.last_name }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Email</strong> {{ record.email }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Phone</strong> {{ record.phone }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Address</strong> {{ record.address }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Province</strong> {{ record.province }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>City</strong> {{ record.city }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Country</strong> {{ record.country }}
+      </p>
+      <p class="d-flex justify-content-between">
+        <strong>Created At</strong> {{ record.creation_date }}
+      </p>
+    </div>
+  </div>
+{% endblock main %}

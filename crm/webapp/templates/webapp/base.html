@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="contact manage app, save contacts" />
+    <meta name="author" content="Qurashi Akeel" />
+    <meta name="description"
+          content="Contact manage app for the purpose of learning django" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://bootswatch.com/5/darkly/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>Django</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    {% include "webapp/navbar.html" %}
+    <main class="container">
+      <!-- Alert messages -->
+      {% for message in messages %}
+        <div class="alert alert-dismissible {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %} alert-success {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} alert-danger {% endif %} fade show mt-4 py-2 d-flex justify-content-between align-items-center"
+             role="alert">
+          {{ message }}
+          <button type="button"
+                  class="close btn"
+                  data-dismiss="alert"
+                  aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+      {% endfor %}
+      {% block main %}
+      {% endblock main %}
+    </main>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+            integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+            crossorigin="anonymous"></script>
+  </body>
+</html>

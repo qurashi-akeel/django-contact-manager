@@ -1,0 +1,18 @@
+{% extends "webapp/base.html" %}
+{% block main %}
+  <div class="container shadow-md bg-dark p-5 my-3 form-container">
+    <h2>Create your account</h2>
+    <h4>Start managing your contacts</h4>
+    <hr class="my-4">
+    <form action="" method="post" autocomplete="off">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary w-100 btn-block my-4">Create Account</button>
+    </form>
+    <div class="text-center mt-1">
+      <p>
+        Already have an account? <a href="{% url 'login' %}">Login</a>
+      </p>
+    </div>
+  </div>
+{% endblock main %}

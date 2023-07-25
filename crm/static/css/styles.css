@@ -1,0 +1,28 @@
+.form-container {
+  max-width: 500px;
+  border-radius: 0.3rem;
+}
+
+.helptext,
+ul {
+  color: gray;
+  display: block;
+  font-size: 0.85rem;
+}
+
+.helptext {
+  margin: 5px auto;
+}
+p:has(input) {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+p > input {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin: auto 1rem;
+  background: transparent;
+  width: 70%;
+}
